@@ -1,10 +1,11 @@
 package br.com.devnetserra;
 
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.FlowLayout;
-import java.awt.Color;
-import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class Display extends JPanel {
@@ -21,6 +22,13 @@ public class Display extends JPanel {
 	setLayout (new FlowLayout(FlowLayout.RIGHT));
 		
 	add(label);
+	
+	@Override
+	
+	public void valorAlterado(String novoValor) {
+		
+		label.setText(novoValor);
+	}
 		// setBackground(Color.WHITE); set o Fundo Branco 
 	}
 }
