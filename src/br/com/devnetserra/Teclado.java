@@ -1,6 +1,5 @@
 package br.com.devnetserra;
 
-import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -79,10 +78,9 @@ public class Teclado extends JPanel implements ActionListener {
 			Memoria.getInstancia().processarComando(botao.getText());
 		}
 	}
-}
+
 		
 	}
 	
 	
 	
-}

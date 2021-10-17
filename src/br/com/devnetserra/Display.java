@@ -8,27 +8,25 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class Display extends JPanel {
-
+public class Display extends JPanel implements MemoriaObservador {
+	
 	private final JLabel label;
 	
 	public Display() {
-	
-	setBackground(new Color(149,213,255)); // criando uma nova cor
-	label = new JLabel("123456789"); 
-	label.setForeground(Color.DARK_GRAY); // alterar a letra do lavel
-	label.setFont(new Font("courier",Font.PLAIN,30));	 // definindo tipo de fonte e tamanho
-	
-	setLayout (new FlowLayout(FlowLayout.RIGHT));
+		Memoria.getInstancia().adicionarObservador(this);
 		
-	add(label);
+		setBackground(new Color(46, 49, 50));
+		label = new JLabel(Memoria.getInstancia().getTextoAtual());
+		label.setForeground(Color.WHITE);
+		label.setFont(new Font("courier", Font.PLAIN, 30));
+		
+		setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 25));
+		
+		add(label);
+	}
 	
 	@Override
-	
 	public void valorAlterado(String novoValor) {
-		
 		label.setText(novoValor);
-	}
-		// setBackground(Color.WHITE); set o Fundo Branco 
 	}
 }
